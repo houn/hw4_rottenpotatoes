@@ -2581,3 +2581,76 @@ Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatc
   [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
   [1m[35m (19.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130812055105')
   [1m[36m (25.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20111119180638')[0m
+
+
+Started GET "/movies/1/with_same_director" for 127.0.0.1 at 2013-08-13 17:29:41 +0800
+
+ActionController::RoutingError (No route matches [GET] "/movies/1/with_same_director"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2013-08-13 17:39:00 +0800
+  Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Rendered movies/show.html.haml within layouts/application (197.3ms)
+Completed 500 Internal Server Error in 253ms
+
+ActionView::Template::Error (undefined method `search_director_path' for #<#<Class:0xb3cde37c>:0xb3c863fc>):
+    18: %p#description= @movie.description
+    19: 
+    20: = link_to 'Edit', edit_movie_path(@movie)
+    21: = button_to'Find Movies With Same Director', search_director_path(@movie)
+    22: = button_to 'Delete', movie_path(@movie), :method => :delete, :confirm => 'Are you sure?'
+    23: = link_to 'Back to movie list', movies_path
+  app/views/movies/show.html.haml:21:in `_app_views_movies_show_html_haml___575137953__639358698'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.8ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (97.7ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2013-08-13 17:39:03 +0800
+  Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (1.0ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
+Rendered movies/index.html.haml within layouts/application (134.1ms)
+Completed 200 OK in 666ms (Views: 335.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-13 17:39:04 +0800
+Served asset /jquery.js - 200 OK (111ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-13 17:39:05 +0800
+Served asset /application.css - 200 OK (38ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-13 17:39:05 +0800
+Served asset /jquery_ujs.js - 200 OK (67ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-13 17:39:05 +0800
+Served asset /application.js - 200 OK (14ms)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2013-08-13 17:39:09 +0800
+  Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "1"]]
+Rendered movies/show.html.haml within layouts/application (74.6ms)
+Completed 500 Internal Server Error in 95ms
+
+ActionView::Template::Error (undefined method `search_director_path' for #<#<Class:0xb43c10e0>:0xb43bf254>):
+    18: %p#description= @movie.description
+    19: 
+    20: = link_to 'Edit', edit_movie_path(@movie)
+    21: = button_to'Find Movies With Same Director', search_director_path(@movie)
+    22: = button_to 'Delete', movie_path(@movie), :method => :delete, :confirm => 'Are you sure?'
+    23: = link_to 'Back to movie list', movies_path
+  app/views/movies/show.html.haml:21:in `_app_views_movies_show_html_haml___575137953__639358698'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (20.3ms)

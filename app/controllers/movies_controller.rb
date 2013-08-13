@@ -64,7 +64,7 @@ class MoviesController < ApplicationController
     redirect_to movies_path
   end
 
-  def withSameDirector
-
+  def search_director
+    @director = Movie.find_all_by_director
   end
 end
