@@ -1,13 +1,28 @@
 -# in app/views/movies/with_same_director.html.haml
 
-%h2 Movies Directed by #{@movie.director}
+%h2 Details about #{@movie.title}
+
+%ul#details
+  %li
+    Rating:
+    = @movie.rating
+  %li
+    Director:
+    = @movie.director
+  %li
+    Released on:
+    = @movie.release_date.strftime("%B %d, %Y")
+
+%h3 Description:
+
+%p#description= @movie.description
 
 %table#movies
-  %thead
+  %thead Movies by the same Director
     %tr
-      %th{:class => @title_header}= link_to 'Movie Title', movies_path(:sort => 'title', :ratings => @selected_ratings), :id => 'title_header'
+      %th Movie Title
       %th Rating
-      %th{:class => @date_header}= link_to 'Release Date', movies_path(:sort => 'release_date', :ratings => @selected_ratings), :id => 'release_date_header'
+      %th Release Date
       %th More Info
   %tbody
     - @movies.each do |movie|
