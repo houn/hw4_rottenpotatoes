@@ -64,8 +64,7 @@ class MoviesController < ApplicationController
     redirect_to movies_path
   end
 
-  def with_same_director
-    @director = @movie.director
-    @movie = Movie.where(director: @director)
+  def withSameDirector
+
   end
 end
