@@ -1879,3 +1879,46 @@ Started GET "/movies" for 127.0.0.1 at 2013-08-13 14:40:05 +0800
   [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R')
 Rendered movies/index.html.haml within layouts/application (39.4ms)
 Completed 200 OK in 55ms (Views: 44.8ms | ActiveRecord: 0.3ms)
+  Processing by MoviesController#search_director as HTML
+Rendered movies/search_director.html.haml within layouts/application (2.3ms)
+Completed 200 OK in 398ms (Views: 393.1ms | ActiveRecord: 0.0ms)
+  Processing by MoviesController#search_director as HTML
+  Parameters: {"director"=>"George Lucas"}
+Rendered movies/search_director.html.haml within layouts/application (20.9ms)
+Completed 200 OK in 375ms (Views: 374.1ms | ActiveRecord: 0.0ms)
+  Processing by MoviesController#search_director as HTML
+  Parameters: {"director"=>"George Lucas"}
+  [1m[36mMovie Load (1.9ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."director" = 'George Lucas'[0m
+Rendered movies/search_director.html.haml within layouts/application (1.7ms)
+Completed 200 OK in 366ms (Views: 302.9ms | ActiveRecord: 1.9ms)
+  Processing by MoviesController#search_director as HTML
+  Parameters: {"director"=>"George Lucas"}
+Rendered movies/search_director.html.haml within layouts/application (1.6ms)
+Completed 200 OK in 348ms (Views: 347.6ms | ActiveRecord: 0.0ms)
+  Processing by MoviesController#search_director as HTML
+  Parameters: {"director"=>"George Lucas"}
+Rendered movies/search_director.html.haml within layouts/application (1.3ms)
+Completed 200 OK in 210ms (Views: 207.3ms | ActiveRecord: 0.0ms)
+  Processing by MoviesController#search_director as HTML
+  Parameters: {"director"=>"George Lucas"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."director" = 'George Lucas'[0m
+Rendered movies/search_director.html.haml within layouts/application (1.3ms)
+Completed 200 OK in 356ms (Views: 297.2ms | ActiveRecord: 0.3ms)
+  Processing by MoviesController#search_director as HTML
+  Parameters: {"director"=>"George Lucas"}
+  [1m[36mMovie Load (0.5ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."director" = 'George Lucas'[0m
+Rendered movies/search_director.html.haml within layouts/application (2.0ms)
+Completed 200 OK in 255ms (Views: 191.9ms | ActiveRecord: 0.5ms)
+  Processing by MoviesController#search_director as HTML
+  Parameters: {"director"=>"George Lucas"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."director" = 'George Lucas'
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.3ms)
+  Processing by MoviesController#search_director as HTML
+  Parameters: {"director"=>"George Lucas"}
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."director" = 'George Lucas'[0m
+Rendered movies/search_director.html.haml within layouts/application (1.5ms)
+Completed 200 OK in 253ms (Views: 205.8ms | ActiveRecord: 0.4ms)
+  Processing by MoviesController#search_director as HTML
+  Parameters: {"director"=>"George Lucas"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."director" = 'George Lucas'
+Completed 200 OK in 63ms (Views: 59.4ms | ActiveRecord: 0.3ms)
